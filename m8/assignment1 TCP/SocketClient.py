@@ -10,7 +10,7 @@ PORT = 8080       # The port used by the server
 '''client making request and closes automatically after the responce arrived'''
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
-    s.sendall(b'From Dollar 10 To INR')
+    s.sendall(input("Enter query: ").encode())
     data = s.recv(1024)
 
 print(data.decode())

@@ -34,6 +34,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 
                 result += int(data[2]) * currency[data[1]+"_"+data[4]][1]
                 
-                result = str(round(result)).encode()
-                
+                result = (str(round(result))+"\nclosing").encode()
             conn.sendall(result)
