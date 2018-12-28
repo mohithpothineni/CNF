@@ -27,7 +27,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     
     result += int(data[1]) * currency[data[0]+"_"+data[2]][1]
     
-    result = str(round(result)).encode()
+    result = (str(round(result))+ "\nserver closing").encode()
     
     s.sendto(result,addr)
 
